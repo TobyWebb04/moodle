@@ -142,9 +142,14 @@ class DashboardView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 12),
-                      Text(
-                        'See your recently accessed items.',
-                        style: TextStyle(fontSize: 14, color: moodleTextMuted),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: Icon(
+                          Icons.menu_book_outlined,
+                          color: moodlePurple,
+                        ),
+                        title: Text('Programming Applications'),
+                        subtitle: Text('Last accessed: Today'),
                       ),
                     ],
                   ),
