@@ -25,10 +25,10 @@ class CalendarView extends StatelessWidget {
       body: Container(
         color: moodleBg,
         padding: const EdgeInsets.all(24.0),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Calendar',
               style: TextStyle(
                 fontSize: 36,
@@ -36,14 +36,52 @@ class CalendarView extends StatelessWidget {
                 color: moodlePurple,
               ),
             ),
-            SizedBox(height: 24),
-            Text(
+            const SizedBox(height: 24),
+            const Text(
               'July 2026',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: moodleTextDark,
               ),
+            ),
+            const SizedBox(height: 24),
+            Table(
+              border: TableBorder.all(color: moodleBorder),
+              children: const [
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Mon', textAlign: TextAlign.center),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Tue', textAlign: TextAlign.center),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Wed', textAlign: TextAlign.center),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Thu', textAlign: TextAlign.center),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Fri', textAlign: TextAlign.center),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Sat', textAlign: TextAlign.center),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Sun', textAlign: TextAlign.center),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
