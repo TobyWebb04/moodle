@@ -98,6 +98,50 @@ class AssessmentsView extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 32),
+            const Text(
+              'Past Assessments',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: moodleTextDark,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Card(
+              color: moodleWhite,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                side: const BorderSide(color: moodleBorder),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Programming Applications and Programming Languages',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: moodlePurple,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Item 1 (Flutter)',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text('Due on the 29 July 2026 at 1:00 PM'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
