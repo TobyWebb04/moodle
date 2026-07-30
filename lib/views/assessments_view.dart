@@ -55,6 +55,49 @@ class AssessmentsView extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 32),
+            const Text(
+              'Upcoming Assessments',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: moodleTextDark,
+              ),
+            ),
+            Card(
+              color: moodleWhite,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                side: const BorderSide(color: moodleBorder),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Software Engineering Theory and Practice',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: moodlePurple,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      'Referral/Deferral Submission',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text('Due on the 31 July 2026 at 1:00 PM'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
