@@ -106,6 +106,16 @@ class DashboardView extends StatelessWidget {
                         title: Text('Programming Applications Coursework'),
                         subtitle: Text('Due: 31 July 2026'),
                       ),
+                      Divider(),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: Icon(
+                          Icons.assignment_outlined,
+                          color: moodlePurple,
+                        ),
+                        title: Text('Security & Cryptography Report'),
+                        subtitle: Text('Due: 5 August 2026'),
+                      ),
                     ],
                   ),
                 ),
