@@ -165,7 +165,14 @@ class CalendarView extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text('17', textAlign: TextAlign.center),
+                      child: Text(
+                        '17',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: moodlePurple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
@@ -185,7 +192,14 @@ class CalendarView extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text('21', textAlign: TextAlign.center),
+                      child: Text(
+                        '21',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: moodlePurple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
@@ -197,7 +211,14 @@ class CalendarView extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text('24', textAlign: TextAlign.center),
+                      child: Text(
+                        '24',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: moodlePurple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
@@ -221,7 +242,14 @@ class CalendarView extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text('29', textAlign: TextAlign.center),
+                      child: Text(
+                        '29',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: moodlePurple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
@@ -229,7 +257,14 @@ class CalendarView extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text('31', textAlign: TextAlign.center),
+                      child: Text(
+                        '31',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: moodlePurple,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.all(8.0),
