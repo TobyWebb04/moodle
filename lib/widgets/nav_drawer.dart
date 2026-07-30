@@ -60,9 +60,7 @@ class NavDrawer extends StatelessWidget {
               selectedTileColor: Colors.white24,
               onTap: () {
                 Navigator.pop(context);
-                if (!isDashboard) {
-                  Navigator.pushReplacementNamed(context, '/');
-                }
+                Navigator.pushReplacementNamed(context, '/');
               },
             ),
             ListTile(
