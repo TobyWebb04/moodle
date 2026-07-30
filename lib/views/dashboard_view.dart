@@ -39,6 +39,17 @@ class DashboardView extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(width: 8),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Assessments',
+                  style: TextStyle(
+                    color: moodlePurple,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
