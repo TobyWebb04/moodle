@@ -52,12 +52,12 @@ class CourseDetailsView extends StatelessWidget {
       drawer: const NavDrawer(),
       body: Container(
         color: moodleBg,
-        child: const SingleChildScrollView(
-          padding: EdgeInsets.all(24.0),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              const Text(
                 'Programming Applications and Programming Languages',
                 style: TextStyle(
                   fontSize: 28,
@@ -65,6 +65,17 @@ class CourseDetailsView extends StatelessWidget {
                   color: moodlePurple,
                 ),
               ),
+              const SizedBox(height: 24),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  'images/programming_banner.png',
+                  width: double.infinity,
+                  height: 180,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(height: 24),
             ],
           ),
         ),
