@@ -56,6 +56,32 @@ class ProfileView extends StatelessWidget {
                 color: moodleTextMuted,
               ),
             ),
+            SizedBox(height: 32),
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'User Details',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    Text('Student ID: up2200113'),
+                    SizedBox(height: 8),
+                    Text('Course: BSc (Hons) / MEng Computer Science'),
+                    SizedBox(height: 8),
+                    Text('School: School of Computing'),
+                    SizedBox(height: 8),
+                    Text('Timezone: Europe/London'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
