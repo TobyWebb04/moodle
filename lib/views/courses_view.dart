@@ -62,12 +62,12 @@ class CoursesView extends StatelessWidget {
       drawer: const NavDrawer(),
       body: Container(
         color: moodleBg,
-        child: const SingleChildScrollView(
-          padding: EdgeInsets.all(24.0),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'My courses',
                 style: TextStyle(
                   fontSize: 28,
@@ -75,10 +75,63 @@ class CoursesView extends StatelessWidget {
                   color: moodlePurple,
                 ),
               ),
-              SizedBox(height: 24),
-              Text(
-                'This is the courses overview page.',
-                style: TextStyle(fontSize: 16, color: moodleTextDark),
+              const SizedBox(height: 24),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(8),
+                      ),
+                      child: Image.asset(
+                        'images/programming_banner.png',
+                        width: double.infinity,
+                        height: 160,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'COMP2205',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'School of Computing',
+                            style: TextStyle(
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            'Programming Applications & Programming Languages',
+                            style: TextStyle(
+                              color: moodlePurple,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
