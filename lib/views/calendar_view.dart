@@ -25,13 +25,27 @@ class CalendarView extends StatelessWidget {
       body: Container(
         color: moodleBg,
         padding: const EdgeInsets.all(24.0),
-        child: const Text(
-          'Calendar',
-          style: TextStyle(
-            fontSize: 36,
-            fontWeight: FontWeight.bold,
-            color: moodlePurple,
-          ),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Calendar',
+              style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                color: moodlePurple,
+              ),
+            ),
+            SizedBox(height: 24),
+            Text(
+              'July 2026',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: moodleTextDark,
+              ),
+            ),
+          ],
         ),
       ),
     );
