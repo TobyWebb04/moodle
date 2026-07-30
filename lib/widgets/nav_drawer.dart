@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moodle/constants.dart';
+import 'package:moodle/views/assessments_view.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({Key? key}) : super(key: key);
@@ -88,6 +89,23 @@ class NavDrawer extends StatelessWidget {
                 if (!isCourses) {
                   Navigator.pushReplacementNamed(context, '/courses');
                 }
+              },
+            ),
+            ListTile(
+              leading:
+                  const Icon(Icons.assignment_outlined, color: moodleWhite),
+              title: const Text(
+                'My Assessments',
+                style: TextStyle(color: moodleWhite, fontSize: 16),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AssessmentsView(),
+                  ),
+                );
               },
             ),
             ListTile(
