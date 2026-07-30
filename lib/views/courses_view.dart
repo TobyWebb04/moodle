@@ -133,6 +133,180 @@ class CoursesView extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(8),
+                      ),
+                      child: Image.asset(
+                        'images/software_engineering_banner.png',
+                        width: double.infinity,
+                        height: 160,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'COMP2204',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'School of Computing',
+                            style: TextStyle(
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            'Software Engineering Theory & Practice',
+                            style: TextStyle(
+                              color: moodlePurple,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(8),
+                      ),
+                      child: Image.asset(
+                        'images/security_banner.png',
+                        width: double.infinity,
+                        height: 160,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'COMP2207',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'School of Computing',
+                            style: TextStyle(
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            'Security & Cryptography',
+                            style: TextStyle(
+                              color: moodlePurple,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(8),
+                      ),
+                      child: Image.asset(
+                        'images/operating_systems_banner.png',
+                        width: double.infinity,
+                        height: 160,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'COMP2206',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            'School of Computing',
+                            style: TextStyle(
+                              color: moodleTextMuted,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: 12),
+                          Text(
+                            'Operating Systems & Internetworking',
+                            style: TextStyle(
+                              color: moodlePurple,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
