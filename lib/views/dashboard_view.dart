@@ -26,9 +26,18 @@ class DashboardView extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
               ),
-              const Text(
-                'Dashboard',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              const Text('Dashboard',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+              const SizedBox(width: 24),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'My Courses',
+                  style: TextStyle(
+                    color: moodlePurple,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
             ],
           ),
