@@ -89,7 +89,7 @@ class DashboardView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Feature Placeholder 1',
+                        'Upcoming Deadlines',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -98,7 +98,7 @@ class DashboardView extends StatelessWidget {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        'This is a placeholder block.',
+                        'Keep track of your upcoming deadlines.',
                         style: TextStyle(fontSize: 14, color: moodleTextMuted),
                       ),
                     ],
