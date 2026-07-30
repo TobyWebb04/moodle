@@ -151,6 +151,16 @@ class DashboardView extends StatelessWidget {
                         title: Text('Programming Applications'),
                         subtitle: Text('Last accessed: Today'),
                       ),
+                      Divider(),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: Icon(
+                          Icons.menu_book_outlined,
+                          color: moodlePurple,
+                        ),
+                        title: Text('Security & Cryptography'),
+                        subtitle: Text('Last accessed: Yesterday'),
+                      ),
                     ],
                   ),
                 ),
