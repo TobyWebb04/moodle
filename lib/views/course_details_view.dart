@@ -134,6 +134,52 @@ class CourseDetailsView extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(24.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'TB1: Flutter Course',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: moodlePurple,
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: Icon(
+                          Icons.link_outlined,
+                          color: moodlePurple,
+                        ),
+                        title: Text('Flutter Course Homepage'),
+                        subtitle: Text('Course homepage and resources'),
+                      ),
+                      Divider(),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: Icon(
+                          Icons.assignment_outlined,
+                          color: moodlePurple,
+                        ),
+                        title: Text(
+                            'Item 1 (Flutter) - Referral and Deferral Coursework Brief'),
+                        subtitle: Text('Coursework specification'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
