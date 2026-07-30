@@ -39,6 +39,23 @@ class ProfileView extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 16),
+            Text(
+              'Toby Webb',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: moodlePurple,
+              ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'up2200113@myport.ac.uk',
+              style: TextStyle(
+                fontSize: 16,
+                color: moodleTextMuted,
+              ),
+            ),
           ],
         ),
       ),
