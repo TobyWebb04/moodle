@@ -161,6 +161,38 @@ class DashboardView extends StatelessWidget {
                         title: Text('Security & Cryptography'),
                         subtitle: Text('Last accessed: Yesterday'),
                       ),
+                      Card(
+                        color: moodleWhite,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(color: moodleBorder),
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(24.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Latest Announcements',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: moodlePurple,
+                                ),
+                              ),
+                              SizedBox(height: 12),
+                              Text(
+                                'No announcements have been posted yet.',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: moodleTextMuted,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
