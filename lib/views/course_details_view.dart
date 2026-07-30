@@ -89,7 +89,7 @@ class CourseDetailsView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'General Information',
+                        'Assessments & Support Materials',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -97,14 +97,38 @@ class CourseDetailsView extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 16),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.campaign_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('Announcements'),
-                        subtitle: Text('Latest module announcements'),
+                      Column(
+                        children: [
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            leading: Icon(
+                              Icons.assignment_outlined,
+                              color: moodlePurple,
+                            ),
+                            title: Text('Coursework Brief'),
+                            subtitle: Text('Assignment specification'),
+                          ),
+                          Divider(),
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            leading: Icon(
+                              Icons.slideshow_outlined,
+                              color: moodlePurple,
+                            ),
+                            title: Text('Lecture Slides'),
+                            subtitle: Text('Weekly lecture materials'),
+                          ),
+                          Divider(),
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            leading: Icon(
+                              Icons.description_outlined,
+                              color: moodlePurple,
+                            ),
+                            title: Text('Past Papers'),
+                            subtitle: Text('Previous exam papers'),
+                          ),
+                        ],
                       ),
                     ],
                   ),
