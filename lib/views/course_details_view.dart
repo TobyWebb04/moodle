@@ -76,6 +76,40 @@ class CourseDetailsView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(24.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'General Information',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: moodlePurple,
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: Icon(
+                          Icons.campaign_outlined,
+                          color: moodlePurple,
+                        ),
+                        title: Text('Announcements'),
+                        subtitle: Text('Latest module announcements'),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

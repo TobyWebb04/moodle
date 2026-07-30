@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moodle/widgets/nav_drawer.dart';
 import 'package:moodle/constants.dart';
+import 'package:moodle/views/course_details_view.dart';
 
 class CoursesView extends StatelessWidget {
   const CoursesView({Key? key}) : super(key: key);
@@ -76,61 +77,72 @@ class CoursesView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              Card(
-                color: moodleWhite,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: moodleBorder),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(8),
-                      ),
-                      child: Image.asset(
-                        'images/programming_banner.png',
-                        width: double.infinity,
-                        height: 160,
-                        fit: BoxFit.cover,
-                      ),
+              InkWell(
+                borderRadius: BorderRadius.circular(8),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CourseDetailsView(),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'COMP2205',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            'School of Computing',
-                            style: TextStyle(
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 12),
-                          Text(
-                            'Programming Applications & Programming Languages',
-                            style: TextStyle(
-                              color: moodlePurple,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+                  );
+                },
+                child: Card(
+                  color: moodleWhite,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(color: moodleBorder),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(8),
+                        ),
+                        child: Image.asset(
+                          'images/programming_banner.png',
+                          width: double.infinity,
+                          height: 160,
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ),
-                  ],
+                      const Padding(
+                        padding: EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'COMP2205',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: moodleTextMuted,
+                                fontSize: 12,
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              'School of Computing',
+                              style: TextStyle(
+                                color: moodleTextMuted,
+                                fontSize: 12,
+                              ),
+                            ),
+                            SizedBox(height: 12),
+                            Text(
+                              'Programming Applications & Programming Languages',
+                              style: TextStyle(
+                                color: moodlePurple,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
