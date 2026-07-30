@@ -96,10 +96,15 @@ class DashboardView extends StatelessWidget {
                           color: moodlePurple,
                         ),
                       ),
-                      SizedBox(height: 12),
-                      Text(
-                        'Keep track of your upcoming deadlines.',
-                        style: TextStyle(fontSize: 14, color: moodleTextMuted),
+                      SizedBox(height: 16),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: Icon(
+                          Icons.assignment_outlined,
+                          color: moodlePurple,
+                        ),
+                        title: Text('Programming Applications Coursework'),
+                        subtitle: Text('Due: 31 July 2026'),
                       ),
                     ],
                   ),
