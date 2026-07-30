@@ -134,7 +134,7 @@ class DashboardView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Feature Placeholder 2',
+                        'Recently Accessed items',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -143,7 +143,7 @@ class DashboardView extends StatelessWidget {
                       ),
                       SizedBox(height: 12),
                       Text(
-                        'This is a placeholder block.',
+                        'See your recently accessed items.',
                         style: TextStyle(fontSize: 14, color: moodleTextMuted),
                       ),
                     ],
