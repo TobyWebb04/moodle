@@ -122,6 +122,75 @@ class _SubmissionViewState extends State<SubmissionView> {
                   ),
                 ),
               ),
+              const SizedBox(height: 24),
+              Card(
+                color: moodleWhite,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: moodleBorder),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Submission',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      const Text(
+                        'File Upload',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: moodleBorder),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          'No file selected',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: moodlePurple,
+                            foregroundColor: Colors.white,
+                          ),
+                          onPressed: () {},
+                          child: const Text('Choose File'),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: moodlePurple,
+                            foregroundColor: Colors.white,
+                          ),
+                          onPressed: () {},
+                          child: const Text('Submit Assignment'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
