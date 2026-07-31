@@ -190,7 +190,17 @@ class _SubmissionViewState extends State<SubmissionView> {
                             backgroundColor: moodlePurple,
                             foregroundColor: Colors.white,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              submissionStatus = 'Submitted for Grading';
+                            });
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Assignment submitted'),
+                              ),
+                            );
+                          },
                           child: const Text('Submit Assignment'),
                         ),
                       ),
