@@ -22,25 +22,25 @@ const List<Course> courses = [
     code: 'COMP2205',
     title: 'Programming Applications & Programming Languages',
     school: 'School of Computing',
-    image: 'assets/images/programming.jpg',
+    image: 'images/programming_banner.png',
   ),
   Course(
     code: 'COMP2204',
     title: 'Software Engineering Theory & Practice',
     school: 'School of Computing',
-    image: 'assets/images/software_engineering.jpg',
+    image: 'images/software_engineering_banner.png',
   ),
   Course(
     code: 'COMP2207',
     title: 'Security & Cryptography',
     school: 'School of Computing',
-    image: 'assets/images/security.jpg',
+    image: 'images/security_banner.png',
   ),
   Course(
     code: 'COMP2206',
     title: 'Operating Systems & Internetworking',
     school: 'School of Computing',
-    image: 'assets/images/operating_systems.jpg',
+    image: 'images/operating_systems_banner.png',
   ),
 ];
 
@@ -143,37 +143,37 @@ class CoursesView extends StatelessWidget {
                           top: Radius.circular(8),
                         ),
                         child: Image.asset(
-                          'images/programming_banner.png',
+                          courses[0].image,
                           width: double.infinity,
                           height: 160,
                           fit: BoxFit.cover,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(16),
+                      Padding(
+                        padding: const EdgeInsets.all(16),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'COMP2205',
-                              style: TextStyle(
+                              courses[0].code,
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: moodleTextMuted,
                                 fontSize: 12,
                               ),
                             ),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Text(
-                              'School of Computing',
-                              style: TextStyle(
+                              courses[0].school,
+                              style: const TextStyle(
                                 color: moodleTextMuted,
                                 fontSize: 12,
                               ),
                             ),
-                            SizedBox(height: 12),
+                            const SizedBox(height: 12),
                             Text(
-                              'Programming Applications & Programming Languages',
-                              style: TextStyle(
+                              courses[0].title,
+                              style: const TextStyle(
                                 color: moodlePurple,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
