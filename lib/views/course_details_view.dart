@@ -14,13 +14,25 @@ class CourseResource {
   });
 }
 
-class CourseSection {
+class CourseWeek {
   final String title;
   final List<CourseResource> resources;
 
-  const CourseSection({
+  const CourseWeek({
     required this.title,
     required this.resources,
+  });
+}
+
+class CourseSection {
+  final String title;
+  final List<CourseResource> resources;
+  final List<CourseWeek> weeks;
+
+  const CourseSection({
+    required this.title,
+    this.resources = const [],
+    this.weeks = const [],
   });
 }
 
@@ -50,6 +62,88 @@ class _CourseDetailsViewState extends State<CourseDetailsView> {
           icon: Icons.description_outlined,
           title: 'Past Papers',
           subtitle: 'Previous exam papers',
+        ),
+      ],
+    ),
+    const CourseSection(
+      title: 'TB1: Flutter Course',
+      resources: [
+        CourseResource(
+          icon: Icons.link_outlined,
+          title: 'Flutter Course Homepage',
+          subtitle: 'Course homepage and resources',
+        ),
+        CourseResource(
+          icon: Icons.assignment_outlined,
+          title: 'Item 1 (Flutter) - Referral and Deferral Coursework Brief',
+          subtitle: 'Coursework specification',
+        ),
+      ],
+    ),
+    const CourseSection(
+      title: 'TB2: Programming Languages',
+      resources: [
+        CourseResource(
+          icon: Icons.picture_as_pdf_outlined,
+          title: 'M30235 Teaching Plan for TB2',
+          subtitle: 'PDF',
+        ),
+        CourseResource(
+          icon: Icons.picture_as_pdf_outlined,
+          title: 'M30235 Reading List for TB2',
+          subtitle: 'PDF',
+        ),
+      ],
+      weeks: [
+        CourseWeek(
+          title: 'Week 1',
+          resources: [
+            CourseResource(
+              icon: Icons.picture_as_pdf_outlined,
+              title: 'lecture01 Introduction to Programming Languages',
+              subtitle: 'PDF',
+            ),
+            CourseResource(
+              icon: Icons.picture_as_pdf_outlined,
+              title: 'lecture02 Evaluation of Programming Languages',
+              subtitle: 'PDF',
+            ),
+            CourseResource(
+              icon: Icons.picture_as_pdf_outlined,
+              title: 'lecture00 Introduction',
+              subtitle: 'PDF',
+            ),
+          ],
+        ),
+        CourseWeek(
+          title: 'Week 2',
+          resources: [
+            CourseResource(
+              icon: Icons.picture_as_pdf_outlined,
+              title: 'lecture03 Implementation and Compilation',
+              subtitle: 'PDF',
+            ),
+            CourseResource(
+              icon: Icons.picture_as_pdf_outlined,
+              title: 'tutorial01 Language Overview',
+              subtitle: 'PDF',
+            ),
+          ],
+        ),
+        CourseWeek(
+          title: 'Week 3',
+          resources: [
+            CourseResource(
+              icon: Icons.picture_as_pdf_outlined,
+              title: 'lecture04 Lexical Analysis - RE',
+              subtitle: 'PDF',
+            ),
+            CourseResource(
+              icon: Icons.picture_as_pdf_outlined,
+              title: 'lecture05 Lexical Analysis - DFA',
+              subtitle: 'PDF',
+            ),
+          ],
         ),
       ],
     ),
@@ -168,39 +262,31 @@ class _CourseDetailsViewState extends State<CourseDetailsView> {
                   side: const BorderSide(color: moodleBorder),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const ExpansionTile(
-                  tilePadding: EdgeInsets.symmetric(horizontal: 24),
-                  childrenPadding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                child: ExpansionTile(
+                  tilePadding: const EdgeInsets.symmetric(horizontal: 24),
+                  childrenPadding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
                   title: Text(
-                    'TB1: Flutter Course',
-                    style: TextStyle(
+                    sections[1].title,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: moodlePurple,
                     ),
                   ),
                   children: [
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.link_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('Flutter Course Homepage'),
-                      subtitle: Text('Course homepage and resources'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.assignment_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text(
-                        'Item 1 (Flutter) - Referral and Deferral Coursework Brief',
-                      ),
-                      subtitle: Text('Coursework specification'),
-                    ),
+                    ...sections[1].resources.expand(
+                          (resource) => [
+                            ListTile(
+                              contentPadding: EdgeInsets.zero,
+                              leading: Icon(
+                                resource.icon,
+                                color: moodlePurple,
+                              ),
+                              title: Text(resource.title),
+                              subtitle: Text(resource.subtitle),
+                            ),
+                          ],
+                        ),
                   ],
                 ),
               ),
@@ -211,134 +297,54 @@ class _CourseDetailsViewState extends State<CourseDetailsView> {
                   side: const BorderSide(color: moodleBorder),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const ExpansionTile(
-                  tilePadding: EdgeInsets.symmetric(horizontal: 24),
-                  childrenPadding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                child: ExpansionTile(
+                  tilePadding: const EdgeInsets.symmetric(horizontal: 24),
+                  childrenPadding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
                   title: Text(
-                    'TB2: Programming Languages',
-                    style: TextStyle(
+                    sections[2].title,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: moodlePurple,
                     ),
                   ),
                   children: [
-                    SizedBox(height: 16),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('M30235 Teaching Plan for TB2'),
-                      subtitle: Text('PDF'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('M30235 Reading List for TB2'),
-                      subtitle: Text('PDF'),
-                    ),
-                    SizedBox(height: 24),
-                    Text(
-                      'Week 1',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 12),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text(
-                          'lecture01 Introduction to Programming Languages'),
-                      subtitle: Text('PDF'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title:
-                          Text('lecture02 Evaluation of Programming Languages'),
-                      subtitle: Text('PDF'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('lecture00 Introduction'),
-                      subtitle: Text('PDF'),
-                    ),
-                    SizedBox(height: 24),
-                    Text(
-                      'Week 2',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 12),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('lecture03 Implementation and Compilation'),
-                      subtitle: Text('PDF'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('tutorial01 Language Overview'),
-                      subtitle: Text('PDF'),
-                    ),
-                    SizedBox(height: 24),
-                    Text(
-                      'Week 3',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 12),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('lecture04 Lexical Analysis - RE'),
-                      subtitle: Text('PDF'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.picture_as_pdf_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('lecture05 Lexical Analysis - DFA'),
-                      subtitle: Text('PDF'),
-                    ),
+                    ...sections[2].resources.map(
+                          (resource) => ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            leading: Icon(
+                              resource.icon,
+                              color: moodlePurple,
+                            ),
+                            title: Text(resource.title),
+                            subtitle: Text(resource.subtitle),
+                          ),
+                        ),
+                    const SizedBox(height: 24),
+                    ...sections[2].weeks.expand(
+                          (week) => [
+                            Text(
+                              week.title,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            ...week.resources.map(
+                              (resource) => ListTile(
+                                contentPadding: EdgeInsets.zero,
+                                leading: Icon(
+                                  resource.icon,
+                                  color: moodlePurple,
+                                ),
+                                title: Text(resource.title),
+                                subtitle: Text(resource.subtitle),
+                              ),
+                            ),
+                            const SizedBox(height: 24),
+                          ],
+                        ),
                   ],
                 ),
               ),
