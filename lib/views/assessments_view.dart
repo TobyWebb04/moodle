@@ -2,8 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:moodle/constants.dart';
 import 'package:moodle/widgets/nav_drawer.dart';
 
+class Assessment {
+  final String module;
+  final String title;
+  final String dueDate;
+
+  const Assessment({
+    required this.module,
+    required this.title,
+    required this.dueDate,
+  });
+}
+
 class AssessmentsView extends StatelessWidget {
   const AssessmentsView({Key? key}) : super(key: key);
+
+  final Assessment upcomingAssessment = const Assessment(
+    module: 'Software Engineering Theory and Practice',
+    title: 'Referral/Deferral Submission',
+    dueDate: 'Due on the 31 July 2026 at 1:00 PM',
+  );
+
+  final Assessment pastAssessment = const Assessment(
+    module: 'Programming Applications and Programming Languages',
+    title: 'Item 1 (Flutter)',
+    dueDate: 'Due on the 29 July 2026 at 1:00 PM',
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -71,29 +95,29 @@ class AssessmentsView extends StatelessWidget {
                 side: const BorderSide(color: moodleBorder),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(20.0),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Software Engineering Theory and Practice',
-                      style: TextStyle(
+                      upcomingAssessment.module,
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: moodlePurple,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
-                      'Referral/Deferral Submission',
-                      style: TextStyle(
+                      upcomingAssessment.title,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Text('Due on the 31 July 2026 at 1:00 PM'),
+                    const SizedBox(height: 8),
+                    Text(upcomingAssessment.dueDate),
                   ],
                 ),
               ),
@@ -115,29 +139,29 @@ class AssessmentsView extends StatelessWidget {
                 side: const BorderSide(color: moodleBorder),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(20.0),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Programming Applications and Programming Languages',
-                      style: TextStyle(
+                      pastAssessment.module,
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: moodlePurple,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
-                      'Item 1 (Flutter)',
-                      style: TextStyle(
+                      pastAssessment.title,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Text('Due on the 29 July 2026 at 1:00 PM'),
+                    const SizedBox(height: 8),
+                    Text(pastAssessment.dueDate),
                   ],
                 ),
               ),
