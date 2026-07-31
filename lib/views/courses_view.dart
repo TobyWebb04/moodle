@@ -44,9 +44,14 @@ const List<Course> courses = [
   ),
 ];
 
-class CoursesView extends StatelessWidget {
+class CoursesView extends StatefulWidget {
   const CoursesView({Key? key}) : super(key: key);
 
+  @override
+  State<CoursesView> createState() => _CoursesViewState();
+}
+
+class _CoursesViewState extends State<CoursesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
