@@ -118,248 +118,77 @@ class CoursesView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              InkWell(
-                borderRadius: BorderRadius.circular(8),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const CourseDetailsView(),
+              for (final course in courses) ...[
+                InkWell(
+                  borderRadius: BorderRadius.circular(8),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CourseDetailsView(),
+                      ),
+                    );
+                  },
+                  child: Card(
+                    color: moodleWhite,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(color: moodleBorder),
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                  );
-                },
-                child: Card(
-                  color: moodleWhite,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(color: moodleBorder),
-                    borderRadius: BorderRadius.circular(8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ClipRRect(
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(8),
+                          ),
+                          child: Image.asset(
+                            course.image,
+                            width: double.infinity,
+                            height: 160,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                course.code,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: moodleTextMuted,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                course.school,
+                                style: const TextStyle(
+                                  color: moodleTextMuted,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              const SizedBox(height: 12),
+                              Text(
+                                course.title,
+                                style: const TextStyle(
+                                  color: moodlePurple,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: const BorderRadius.vertical(
-                          top: Radius.circular(8),
-                        ),
-                        child: Image.asset(
-                          courses[0].image,
-                          width: double.infinity,
-                          height: 160,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              courses[0].code,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: moodleTextMuted,
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              courses[0].school,
-                              style: const TextStyle(
-                                color: moodleTextMuted,
-                                fontSize: 12,
-                              ),
-                            ),
-                            const SizedBox(height: 12),
-                            Text(
-                              courses[0].title,
-                              style: const TextStyle(
-                                color: moodlePurple,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              Card(
-                color: moodleWhite,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: moodleBorder),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(8),
-                      ),
-                      child: Image.asset(
-                        'images/software_engineering_banner.png',
-                        width: double.infinity,
-                        height: 160,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'COMP2204',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            'School of Computing',
-                            style: TextStyle(
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 12),
-                          Text(
-                            'Software Engineering Theory & Practice',
-                            style: TextStyle(
-                              color: moodlePurple,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              Card(
-                color: moodleWhite,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: moodleBorder),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(8),
-                      ),
-                      child: Image.asset(
-                        'images/security_banner.png',
-                        width: double.infinity,
-                        height: 160,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'COMP2207',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            'School of Computing',
-                            style: TextStyle(
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 12),
-                          Text(
-                            'Security & Cryptography',
-                            style: TextStyle(
-                              color: moodlePurple,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              Card(
-                color: moodleWhite,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: moodleBorder),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(8),
-                      ),
-                      child: Image.asset(
-                        'images/operating_systems_banner.png',
-                        width: double.infinity,
-                        height: 160,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'COMP2206',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            'School of Computing',
-                            style: TextStyle(
-                              color: moodleTextMuted,
-                              fontSize: 12,
-                            ),
-                          ),
-                          SizedBox(height: 12),
-                          Text(
-                            'Operating Systems & Internetworking',
-                            style: TextStyle(
-                              color: moodlePurple,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+                const SizedBox(height: 20),
+              ],
             ],
           ),
         ),
