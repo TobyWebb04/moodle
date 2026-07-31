@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:moodle/constants.dart';
 import 'package:moodle/widgets/nav_drawer.dart';
 
-class CourseDetailsView extends StatelessWidget {
+class CourseDetailsView extends StatefulWidget {
   const CourseDetailsView({Key? key}) : super(key: key);
 
+  @override
+  State<CourseDetailsView> createState() => _CourseDetailsViewState();
+}
+
+class _CourseDetailsViewState extends State<CourseDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
