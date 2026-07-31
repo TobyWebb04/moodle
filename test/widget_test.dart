@@ -61,4 +61,19 @@ void main() {
     // Verify the Profile page has loaded.
     expect(find.text('Toby Webb'), findsOneWidget);
   });
+  testWidgets('Assessments page loads correctly', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MoodleApp());
+
+    // Open the navigation drawer.
+    await tester.tap(find.byIcon(Icons.menu));
+    await tester.pumpAndSettle();
+
+    // Navigate to the Assessments page.
+    await tester.tap(find.text('Assessments'));
+    await tester.pumpAndSettle();
+
+    // Verify the Assessments page has loaded.
+    expect(find.text('My Assessments'), findsWidgets);
+  });
 }
