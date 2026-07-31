@@ -70,13 +70,13 @@ void main() {
     await tester.pumpAndSettle();
 
     // Navigate to the Assessments page.
-    await tester.tap(find.text('Assessments'));
+    await tester.tap(find.text('My Assessments'));
     await tester.pumpAndSettle();
 
     // Verify the Assessments page has loaded.
     expect(find.text('My Assessments'), findsWidgets);
   });
-  testWidgets('Assignment submission page loads correctly',
+  testWidgets('Course details page loads correctly',
       (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MoodleApp());
@@ -85,15 +85,16 @@ void main() {
     await tester.tap(find.byIcon(Icons.menu));
     await tester.pumpAndSettle();
 
-    // Navigate to the Assessments page.
-    await tester.tap(find.text('Assessments'));
+    // Navigate to My courses.
+    await tester.tap(find.text('My courses'));
     await tester.pumpAndSettle();
 
-    // Open the submission page.
-    await tester.tap(find.text('View Submission'));
+    // Open the course.
+    await tester
+        .tap(find.text('Programming Applications & Programming Languages'));
     await tester.pumpAndSettle();
 
-    // Verify the Assignment Submission page has loaded.
-    expect(find.text('Assignment Submission'), findsWidgets);
+    // Verify the course details page has loaded.
+    expect(find.text('Assessments & Support Materials'), findsOneWidget);
   });
 }
