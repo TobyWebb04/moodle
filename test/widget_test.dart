@@ -46,4 +46,19 @@ void main() {
     // Verify that the Calendar page has loaded
     expect(find.text('Calendar'), findsWidgets);
   });
+  testWidgets('Profile page loads correctly', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MoodleApp());
+
+    // Open the navigation drawer.
+    await tester.tap(find.byIcon(Icons.menu));
+    await tester.pumpAndSettle();
+
+    // Navigate to the Profile page.
+    await tester.tap(find.text('Profile'));
+    await tester.pumpAndSettle();
+
+    // Verify the Profile page has loaded.
+    expect(find.text('Toby Webb'), findsOneWidget);
+  });
 }
