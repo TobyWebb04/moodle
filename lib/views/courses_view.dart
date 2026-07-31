@@ -146,77 +146,84 @@ class _CoursesViewState extends State<CoursesView> {
                 },
               ),
               const SizedBox(height: 20),
-              for (final course in courses) ...[
-                InkWell(
-                  borderRadius: BorderRadius.circular(8),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const CourseDetailsView(),
+              for (final course in courses)
+                if (searchText.isEmpty ||
+                    course.title
+                        .toLowerCase()
+                        .contains(searchText.toLowerCase()) ||
+                    course.code
+                        .toLowerCase()
+                        .contains(searchText.toLowerCase())) ...[
+                  InkWell(
+                    borderRadius: BorderRadius.circular(8),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CourseDetailsView(),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      color: moodleWhite,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        side: const BorderSide(color: moodleBorder),
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                    );
-                  },
-                  child: Card(
-                    color: moodleWhite,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      side: const BorderSide(color: moodleBorder),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: const BorderRadius.vertical(
-                            top: Radius.circular(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: const BorderRadius.vertical(
+                              top: Radius.circular(8),
+                            ),
+                            child: Image.asset(
+                              course.image,
+                              width: double.infinity,
+                              height: 160,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                          child: Image.asset(
-                            course.image,
-                            width: double.infinity,
-                            height: 160,
-                            fit: BoxFit.cover,
+                          Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  course.code,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: moodleTextMuted,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  course.school,
+                                  style: const TextStyle(
+                                    color: moodleTextMuted,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                const SizedBox(height: 12),
+                                Text(
+                                  course.title,
+                                  style: const TextStyle(
+                                    color: moodlePurple,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                course.code,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: moodleTextMuted,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                course.school,
-                                style: const TextStyle(
-                                  color: moodleTextMuted,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              const SizedBox(height: 12),
-                              Text(
-                                course.title,
-                                style: const TextStyle(
-                                  color: moodlePurple,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 20),
-              ],
+                  const SizedBox(height: 20),
+                ],
             ],
           ),
         ),
