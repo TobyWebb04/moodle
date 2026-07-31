@@ -32,6 +32,28 @@ class CourseDetailsView extends StatefulWidget {
 }
 
 class _CourseDetailsViewState extends State<CourseDetailsView> {
+  final List<CourseSection> sections = [
+    const CourseSection(
+      title: 'Assessments & Support Materials',
+      resources: [
+        CourseResource(
+          icon: Icons.assignment_outlined,
+          title: 'Coursework Brief',
+          subtitle: 'Assignment specification',
+        ),
+        CourseResource(
+          icon: Icons.slideshow_outlined,
+          title: 'Lecture Slides',
+          subtitle: 'Weekly lecture materials',
+        ),
+        CourseResource(
+          icon: Icons.description_outlined,
+          title: 'Past Papers',
+          subtitle: 'Previous exam papers',
+        ),
+      ],
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,47 +132,31 @@ class _CourseDetailsViewState extends State<CourseDetailsView> {
                   side: const BorderSide(color: moodleBorder),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const ExpansionTile(
-                  tilePadding: EdgeInsets.symmetric(horizontal: 24),
-                  childrenPadding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                child: ExpansionTile(
+                  tilePadding: const EdgeInsets.symmetric(horizontal: 24),
+                  childrenPadding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
                   title: Text(
-                    'Assessments & Support Materials',
-                    style: TextStyle(
+                    sections[0].title,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: moodlePurple,
                     ),
                   ),
                   children: [
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.assignment_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('Coursework Brief'),
-                      subtitle: Text('Assignment specification'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.slideshow_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('Lecture Slides'),
-                      subtitle: Text('Weekly lecture materials'),
-                    ),
-                    Divider(),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Icon(
-                        Icons.description_outlined,
-                        color: moodlePurple,
-                      ),
-                      title: Text('Past Papers'),
-                      subtitle: Text('Previous exam papers'),
-                    ),
+                    ...sections[0].resources.expand(
+                          (resource) => [
+                            ListTile(
+                              contentPadding: EdgeInsets.zero,
+                              leading: Icon(
+                                resource.icon,
+                                color: moodlePurple,
+                              ),
+                              title: Text(resource.title),
+                              subtitle: Text(resource.subtitle),
+                            ),
+                          ],
+                        ),
                   ],
                 ),
               ),
