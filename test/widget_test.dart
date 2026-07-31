@@ -16,7 +16,7 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MoodleApp());
 
-    // Verify that Dashboard title exists.
+    // Verify that Dashboard title exists
     expect(find.text('Dashboard'), findsNWidgets(2));
 
     // Open drawer
@@ -28,6 +28,22 @@ void main() {
     await tester.pumpAndSettle();
 
     // Verify Courses page contains title
-    expect(find.text('This is the courses overview page.'), findsOneWidget);
+    expect(find.text('Programming Applications & Programming Languages'),
+        findsOneWidget);
+  });
+  testWidgets('Calendar page loads', (WidgetTester tester) async {
+    // Build our app and trigger a frame
+    await tester.pumpWidget(const MoodleApp());
+
+    // Open the navigation drawer
+    await tester.tap(find.byIcon(Icons.menu));
+    await tester.pumpAndSettle();
+
+    // Navigate to the Calendar page using the drawer
+    await tester.tap(find.text('Calendar'));
+    await tester.pumpAndSettle();
+
+    // Verify that the Calendar page has loaded
+    expect(find.text('Calendar'), findsWidgets);
   });
 }
