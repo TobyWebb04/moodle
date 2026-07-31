@@ -205,137 +205,135 @@ class _CourseDetailsViewState extends State<CourseDetailsView> {
                   side: const BorderSide(color: moodleBorder),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'TB2: Programming Languages',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: moodlePurple,
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('M30235 Teaching Plan for TB2'),
-                        subtitle: Text('PDF'),
-                      ),
-                      Divider(),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('M30235 Reading List for TB2'),
-                        subtitle: Text('PDF'),
-                      ),
-                      SizedBox(height: 24),
-                      Text(
-                        'Week 1',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 12),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text(
-                            'lecture01 Introduction to Programming Languages'),
-                        subtitle: Text('PDF'),
-                      ),
-                      Divider(),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text(
-                            'lecture02 Evaluation of Programming Languages'),
-                        subtitle: Text('PDF'),
-                      ),
-                      Divider(),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('lecture00 Introduction'),
-                        subtitle: Text('PDF'),
-                      ),
-                      SizedBox(height: 24),
-                      Text(
-                        'Week 2',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 12),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('lecture03 Implementation and Compilation'),
-                        subtitle: Text('PDF'),
-                      ),
-                      Divider(),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('tutorial01 Language Overview'),
-                        subtitle: Text('PDF'),
-                      ),
-                      SizedBox(height: 24),
-                      Text(
-                        'Week 3',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 12),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('lecture04 Lexical Analysis - RE'),
-                        subtitle: Text('PDF'),
-                      ),
-                      Divider(),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: Icon(
-                          Icons.picture_as_pdf_outlined,
-                          color: moodlePurple,
-                        ),
-                        title: Text('lecture05 Lexical Analysis - DFA'),
-                        subtitle: Text('PDF'),
-                      ),
-                    ],
+                child: const ExpansionTile(
+                  tilePadding: EdgeInsets.symmetric(horizontal: 24),
+                  childrenPadding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                  title: Text(
+                    'TB2: Programming Languages',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: moodlePurple,
+                    ),
                   ),
+                  children: [
+                    SizedBox(height: 16),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('M30235 Teaching Plan for TB2'),
+                      subtitle: Text('PDF'),
+                    ),
+                    Divider(),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('M30235 Reading List for TB2'),
+                      subtitle: Text('PDF'),
+                    ),
+                    SizedBox(height: 24),
+                    Text(
+                      'Week 1',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text(
+                          'lecture01 Introduction to Programming Languages'),
+                      subtitle: Text('PDF'),
+                    ),
+                    Divider(),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title:
+                          Text('lecture02 Evaluation of Programming Languages'),
+                      subtitle: Text('PDF'),
+                    ),
+                    Divider(),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('lecture00 Introduction'),
+                      subtitle: Text('PDF'),
+                    ),
+                    SizedBox(height: 24),
+                    Text(
+                      'Week 2',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('lecture03 Implementation and Compilation'),
+                      subtitle: Text('PDF'),
+                    ),
+                    Divider(),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('tutorial01 Language Overview'),
+                      subtitle: Text('PDF'),
+                    ),
+                    SizedBox(height: 24),
+                    Text(
+                      'Week 3',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('lecture04 Lexical Analysis - RE'),
+                      subtitle: Text('PDF'),
+                    ),
+                    Divider(),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.picture_as_pdf_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('lecture05 Lexical Analysis - DFA'),
+                      subtitle: Text('PDF'),
+                    ),
+                  ],
                 ),
               ),
             ],
