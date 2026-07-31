@@ -52,6 +52,7 @@ class CoursesView extends StatefulWidget {
 }
 
 class _CoursesViewState extends State<CoursesView> {
+  String searchText = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,6 +124,28 @@ class _CoursesViewState extends State<CoursesView> {
                 ),
               ),
               const SizedBox(height: 24),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search courses',
+                  prefixIcon: const Icon(Icons.search),
+                  filled: true,
+                  fillColor: moodleWhite,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: const BorderSide(color: moodleBorder),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: const BorderSide(color: moodleBorder),
+                  ),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    searchText = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 20),
               for (final course in courses) ...[
                 InkWell(
                   borderRadius: BorderRadius.circular(8),
