@@ -11,6 +11,8 @@ class NavDrawer extends StatelessWidget {
     final bool isDashboard = currentRoute == '/';
     final bool isCourses = currentRoute == '/courses';
     final bool isProfile = currentRoute == '/profile';
+    final bool isAssessments = currentRoute == '/assessments';
+    final bool isCalendar = currentRoute == '/calendar';
 
     return Drawer(
       backgroundColor: moodlePurple,
@@ -70,8 +72,13 @@ class NavDrawer extends StatelessWidget {
                 'Calendar',
                 style: TextStyle(color: moodleWhite, fontSize: 16),
               ),
+              selected: isCalendar,
+              selectedTileColor: Colors.white24,
               onTap: () {
-                // placeholder
+                Navigator.pop(context);
+                if (!isCalendar) {
+                  Navigator.pushReplacementNamed(context, '/calendar');
+                }
               },
             ),
             ListTile(
@@ -96,14 +103,13 @@ class NavDrawer extends StatelessWidget {
                 'My Assessments',
                 style: TextStyle(color: moodleWhite, fontSize: 16),
               ),
+              selected: isAssessments,
+              selectedTileColor: Colors.white24,
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AssessmentsView(),
-                  ),
-                );
+                if (!isAssessments) {
+                  Navigator.pushReplacementNamed(context, '/assessments');
+                }
               },
             ),
             ListTile(
