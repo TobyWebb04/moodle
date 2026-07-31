@@ -61,21 +61,6 @@ void main() {
     // Verify the Profile page has loaded.
     expect(find.text('Toby Webb'), findsOneWidget);
   });
-  testWidgets('Assessments page loads correctly', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MoodleApp());
-
-    // Open the navigation drawer.
-    await tester.tap(find.byIcon(Icons.menu));
-    await tester.pumpAndSettle();
-
-    // Navigate to the Assessments page.
-    await tester.tap(find.text('My Assessments'));
-    await tester.pumpAndSettle();
-
-    // Verify the Assessments page has loaded.
-    expect(find.text('My Assessments'), findsWidgets);
-  });
   testWidgets('Course details page loads correctly',
       (WidgetTester tester) async {
     // Build our app and trigger a frame.
@@ -96,5 +81,21 @@ void main() {
 
     // Verify the course details page has loaded.
     expect(find.text('Assessments & Support Materials'), findsOneWidget);
+  });
+  testWidgets('Navigation drawer displays all menu items',
+      (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MoodleApp());
+
+    // Open the drawer.
+    await tester.tap(find.byIcon(Icons.menu));
+    await tester.pumpAndSettle();
+
+    // Verify menu items are present.
+    expect(find.text('Dashboard'), findsWidgets);
+    expect(find.text('Calendar'), findsOneWidget);
+    expect(find.text('My courses'), findsOneWidget);
+    expect(find.text('My Assessments'), findsOneWidget);
+    expect(find.text('Profile'), findsOneWidget);
   });
 }
