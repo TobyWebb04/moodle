@@ -30,6 +30,9 @@ class _SubmissionViewState extends State<SubmissionView> {
     dueDate: '31 July 2026 at 1:00 PM',
     submissionStatus: 'Not Submitted',
   );
+  String selectedFile = 'No file selected';
+  String submissionStatus = 'Not Submitted';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +101,7 @@ class _SubmissionViewState extends State<SubmissionView> {
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        assignment.submissionStatus,
+                        submissionStatus,
                         style: const TextStyle(
                           fontSize: 16,
                         ),
@@ -158,9 +161,9 @@ class _SubmissionViewState extends State<SubmissionView> {
                           border: Border.all(color: moodleBorder),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: const Text(
-                          'No file selected',
-                          style: TextStyle(fontSize: 15),
+                        child: Text(
+                          selectedFile,
+                          style: const TextStyle(fontSize: 15),
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -171,7 +174,11 @@ class _SubmissionViewState extends State<SubmissionView> {
                             backgroundColor: moodlePurple,
                             foregroundColor: Colors.white,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              selectedFile = 'assignment.docx';
+                            });
+                          },
                           child: const Text('Choose File'),
                         ),
                       ),
