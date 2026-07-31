@@ -2,6 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:moodle/constants.dart';
 import 'package:moodle/widgets/nav_drawer.dart';
 
+class CourseResource {
+  final IconData icon;
+  final String title;
+  final String subtitle;
+
+  const CourseResource({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+  });
+}
+
+class CourseSection {
+  final String title;
+  final List<CourseResource> resources;
+
+  const CourseSection({
+    required this.title,
+    required this.resources,
+  });
+}
+
 class CourseDetailsView extends StatefulWidget {
   const CourseDetailsView({Key? key}) : super(key: key);
 
