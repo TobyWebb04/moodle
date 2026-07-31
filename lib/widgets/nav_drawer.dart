@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:moodle/constants.dart';
-import 'package:moodle/views/assessments_view.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({Key? key}) : super(key: key);

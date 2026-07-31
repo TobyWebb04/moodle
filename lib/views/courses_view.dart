@@ -3,6 +3,47 @@ import 'package:moodle/widgets/nav_drawer.dart';
 import 'package:moodle/constants.dart';
 import 'package:moodle/views/course_details_view.dart';
 
+class Course {
+  final String code;
+  final String title;
+  final String school;
+  final String image;
+
+  const Course({
+    required this.code,
+    required this.title,
+    required this.school,
+    required this.image,
+  });
+}
+
+const List<Course> courses = [
+  Course(
+    code: 'COMP2205',
+    title: 'Programming Applications & Programming Languages',
+    school: 'School of Computing',
+    image: 'assets/images/programming.jpg',
+  ),
+  Course(
+    code: 'COMP2204',
+    title: 'Software Engineering Theory & Practice',
+    school: 'School of Computing',
+    image: 'assets/images/software_engineering.jpg',
+  ),
+  Course(
+    code: 'COMP2207',
+    title: 'Security & Cryptography',
+    school: 'School of Computing',
+    image: 'assets/images/security.jpg',
+  ),
+  Course(
+    code: 'COMP2206',
+    title: 'Operating Systems & Internetworking',
+    school: 'School of Computing',
+    image: 'assets/images/operating_systems.jpg',
+  ),
+];
+
 class CoursesView extends StatelessWidget {
   const CoursesView({Key? key}) : super(key: key);
 
