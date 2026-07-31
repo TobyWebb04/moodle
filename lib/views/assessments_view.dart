@@ -118,6 +118,20 @@ class AssessmentsView extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(upcomingAssessment.dueDate),
+                    const SizedBox(height: 16),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: moodlePurple,
+                          foregroundColor: Colors.white,
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/submission');
+                        },
+                        child: const Text('View Submission'),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -162,6 +176,20 @@ class AssessmentsView extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(pastAssessment.dueDate),
+                    const SizedBox(height: 16),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: moodlePurple,
+                          foregroundColor: Colors.white,
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/submission');
+                        },
+                        child: const Text('View Submission'),
+                      ),
+                    ),
                   ],
                 ),
               ),
