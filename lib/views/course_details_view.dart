@@ -110,55 +110,48 @@ class _CourseDetailsViewState extends State<CourseDetailsView> {
                   side: const BorderSide(color: moodleBorder),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(24.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Assessments & Support Materials',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: moodlePurple,
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      Column(
-                        children: [
-                          ListTile(
-                            contentPadding: EdgeInsets.zero,
-                            leading: Icon(
-                              Icons.assignment_outlined,
-                              color: moodlePurple,
-                            ),
-                            title: Text('Coursework Brief'),
-                            subtitle: Text('Assignment specification'),
-                          ),
-                          Divider(),
-                          ListTile(
-                            contentPadding: EdgeInsets.zero,
-                            leading: Icon(
-                              Icons.slideshow_outlined,
-                              color: moodlePurple,
-                            ),
-                            title: Text('Lecture Slides'),
-                            subtitle: Text('Weekly lecture materials'),
-                          ),
-                          Divider(),
-                          ListTile(
-                            contentPadding: EdgeInsets.zero,
-                            leading: Icon(
-                              Icons.description_outlined,
-                              color: moodlePurple,
-                            ),
-                            title: Text('Past Papers'),
-                            subtitle: Text('Previous exam papers'),
-                          ),
-                        ],
-                      ),
-                    ],
+                child: const ExpansionTile(
+                  tilePadding: EdgeInsets.symmetric(horizontal: 24),
+                  childrenPadding: EdgeInsets.fromLTRB(24, 0, 24, 24),
+                  title: Text(
+                    'Assessments & Support Materials',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: moodlePurple,
+                    ),
                   ),
+                  children: [
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.assignment_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('Coursework Brief'),
+                      subtitle: Text('Assignment specification'),
+                    ),
+                    Divider(),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.slideshow_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('Lecture Slides'),
+                      subtitle: Text('Weekly lecture materials'),
+                    ),
+                    Divider(),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.description_outlined,
+                        color: moodlePurple,
+                      ),
+                      title: Text('Past Papers'),
+                      subtitle: Text('Previous exam papers'),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 20),
